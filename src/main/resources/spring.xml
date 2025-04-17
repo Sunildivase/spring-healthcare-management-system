@@ -1,0 +1,25 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+    <!--person service-->
+
+    <bean id="personService" class="com.healthcareApp.service.PersonService">
+        <!--                <property name="student" ref="student" />-->
+        <constructor-arg ref="person"/>
+    </bean>
+
+    <bean id="person" class="com.healthcareApp.model.Person">
+        <property name="stdId" value="1" />
+        <property name="name" value="abc" />
+        <property name="gender" value="20" />
+        <property name="city" value="female" />
+        <property name="contactNo" value="7895484144" />
+
+
+        <!--        <property name="address" ref="address" />-->
+        <!--        when we use address as another class use ref="address"-->
+    </bean>
+
+</beans>
