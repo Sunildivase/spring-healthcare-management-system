@@ -2,20 +2,19 @@ package com.healthcareApp.model;
 
 import lombok.*;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
 @Setter
 @Getter
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Builder
-public class Person {
-    private int personId;
-    private String type;
+public class Doctor {
+    private int doctorId;
     private String firstName;
     private String lastName;
     private int age;
     private String gender;
     private long contactNo;
-    private long alternateMobile;
-    private String address;
+    private String speciality;
+    private int experience;
 }
