@@ -4,15 +4,19 @@ import com.healthcareApp.model.Person;
 import com.healthcareApp.repository.PersonRepository;
 import lombok.*;
 
+
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-@AllArgsConstructor
-@NoArgsConstructor
-@Builder
 @Data
-@Getter
 @Setter
+@Getter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+
 public class PersonService {
 
     private static final Scanner scanner = new Scanner(System.in);
@@ -23,19 +27,65 @@ public class PersonService {
         System.out.println(person);
     }
 
-    public boolean createPerson(Person person){
+    public boolean createPerson() throws SQLException {
+
+        System.out.println("please enter personId");
+        int personId = Integer.parseInt(scanner.nextLine());
+
+        System.out.println("please enter type");
+        String type = scanner.nextLine();
+
+        System.out.println("please enter firstName");
+        String firstName = scanner.nextLine();
+
+        System.out.println("please enter lastName");
+        String lastName = scanner.nextLine();
+
+        System.out.println("please enter age");
+        int age = Integer.parseInt(scanner.nextLine());
+
+        System.out.println("please enter gender");
+        String gender = scanner.nextLine();
+
+        System.out.println("please enter contactNo");
+        long contactNo = Long.parseLong(scanner.nextLine());
+
+        System.out.println("please enter alternateMobile");
+        Long alternateMobile = Long.parseLong(scanner.nextLine());
+
+        System.out.println("please enter address");
+        String address = scanner.nextLine();
+
+        Person person = new Person(personId,type,firstName,lastName,age,gender,contactNo,alternateMobile,address);
+
+        System.out.println("person created successfully!!!");
+        return personRepository.createPerson(person);
+    }
+
+    public List<Person> displayPerson() throws SQLException {
+
+        Person person = new Person();
+
+        List<Person> personList = new ArrayList<>();
+
+        System.out.println("person list: "+personRepository.displayPerson());
+
+        return personList;
+    }
+
+    public boolean updatePerson(int personId,String firstName) throws SQLException {
+
+        if (personRepository.updatePerson(personId, firstName)) {
+            System.out.println("person updated successfully ");
+        } else {
+            System.out.println("Failed to update person");
+        }
         return false;
     }
 
-    public List<Person> displayPerson(){
-        return displayPerson();
-    }
+    public void deletePerson(int personId) throws SQLException {
 
-    public boolean updatePerson(int personId,String firstName){
-        return false;
-    }
-
-    public boolean deletePerson(int personId){
-        return false;
+        boolean deletedPerson = personRepository.deletePerson(personId);
+        System.out.println("deleted person: "+deletedPerson);
     }
 }

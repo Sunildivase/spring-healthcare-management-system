@@ -1,19 +1,23 @@
 package com.healthcareApp;
 
 import com.healthcareApp.controller.PersonController;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import java.sql.SQLException;
 import java.util.Scanner;
 
-/**
- * Hello world!
- */
 public class App {
+
+    public static ApplicationContext context;
 
     private static final Scanner scanner = new Scanner(System.in);
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
 
-        int option=0;
+        context = new ClassPathXmlApplicationContext("spring.xml");
+
+        int option;
 
         do{
             System.out.println("------spring-healthcare-management-system------");
@@ -30,7 +34,7 @@ public class App {
 
             switch (option){
                 case 1:
-                    PersonController personController = new PersonController();
+                    PersonController personController = context.getBean("personController",PersonController.class);
                     personController.run();
                     System.out.println("person successfully created");
                     break;
