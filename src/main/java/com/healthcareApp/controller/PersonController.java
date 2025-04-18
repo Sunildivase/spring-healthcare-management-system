@@ -8,12 +8,12 @@ import org.springframework.context.ApplicationContext;
 import java.sql.SQLException;
 import java.util.Scanner;
 
-@Data
-@Setter
-@Builder
-@Getter
-@AllArgsConstructor
+
 @NoArgsConstructor
+@AllArgsConstructor
+@Setter
+@Getter
+
 public class PersonController {
 
     private static final Scanner scanner = new Scanner(System.in);

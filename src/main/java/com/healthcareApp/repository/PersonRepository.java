@@ -2,9 +2,7 @@ package com.healthcareApp.repository;
 
 import com.healthcareApp.model.Person;
 import com.healthcareApp.service.ConnectionService;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 
 import java.sql.Connection;
@@ -14,11 +12,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-@Data
-@NoArgsConstructor
 @AllArgsConstructor
 public class PersonRepository {
-
 
     private static Connection connection = null;
 

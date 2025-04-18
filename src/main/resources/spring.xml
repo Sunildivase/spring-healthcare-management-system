@@ -3,21 +3,18 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
 	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 
-    <!--person bean repository-->
+    <!-- Repository Bean -->
     <bean id="personRepository" class="com.healthcareApp.repository.PersonRepository"/>
 
-    <!--person bean service-->
-
+    <!-- Service Bean -->
     <bean id="personService" class="com.healthcareApp.service.PersonService">
-        <property name="personRepository" ref="personRepository"/>
+<!--        <property name="personRepository" ref="personRepository"/>-->
+        <constructor-arg ref="personRepository"/>
     </bean>
 
-    <!--person bean controller-->
+    <!-- Controller Bean -->
     <bean id="personController" class="com.healthcareApp.controller.PersonController">
-        <constructor-arg ref="personRepository"/>
         <constructor-arg ref="personService"/>
-<!--        <property name="personRepository" ref="personRepository"/>-->
-<!--        <property name="personService" ref="personService"/>-->
     </bean>
 
 

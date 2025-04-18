@@ -10,13 +10,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-@Data
+
+@NoArgsConstructor
 @Setter
 @Getter
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
-
 public class PersonService {
 
     private static final Scanner scanner = new Scanner(System.in);
@@ -56,7 +53,16 @@ public class PersonService {
         System.out.println("please enter address");
         String address = scanner.nextLine();
 
-        Person person = new Person(personId,type,firstName,lastName,age,gender,contactNo,alternateMobile,address);
+        Person person = new Person();
+        person.setPersonId(personId);
+        person.setType(type);
+        person.setFirstName(firstName);
+        person.setLastName(lastName);
+        person.setAge(age);
+        person.setGender(gender);
+        person.setContactNo(contactNo);
+        person.setAlternateMobile(alternateMobile);
+        person.setAddress(address);
 
         System.out.println("person created successfully!!!");
         return personRepository.createPerson(person);
