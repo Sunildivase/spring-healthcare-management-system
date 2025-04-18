@@ -9,13 +9,9 @@ import java.util.Scanner;
 
 public class App {
 
-    public static ApplicationContext context;
-
     private static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) throws SQLException {
-
-        context = new ClassPathXmlApplicationContext("spring.xml");
 
         int option;
 
@@ -34,7 +30,9 @@ public class App {
 
             switch (option){
                 case 1:
+                    ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
                     PersonController personController = context.getBean("personController",PersonController.class);
+//                    PersonController personController = new PersonController();
                     personController.run();
                     System.out.println("person successfully created");
                     break;

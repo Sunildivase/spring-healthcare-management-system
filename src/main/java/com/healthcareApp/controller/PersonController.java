@@ -13,7 +13,6 @@ import java.util.Scanner;
 @AllArgsConstructor
 @Setter
 @Getter
-
 public class PersonController {
 
     private static final Scanner scanner = new Scanner(System.in);

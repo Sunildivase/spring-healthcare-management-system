@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @AllArgsConstructor
+
 public class PersonRepository {
 
     private static Connection connection = null;

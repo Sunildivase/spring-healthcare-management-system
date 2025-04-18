@@ -11,7 +11,8 @@ import java.util.List;
 import java.util.Scanner;
 
 
-@NoArgsConstructor
+@AllArgsConstructor
+
 @Setter
 @Getter
 public class PersonService {
