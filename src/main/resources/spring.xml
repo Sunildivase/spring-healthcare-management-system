@@ -4,17 +4,17 @@
 	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 
     <!-- Repository Bean -->
-    <bean id="personRepository" class="com.healthcareApp.repository.PersonRepository" scope="prototype"/>
+    <bean id="personRepository" class="com.healthcareApp.repository.PersonRepository" />
 
     <!-- Service Bean -->
-    <bean id="personService" class="com.healthcareApp.service.PersonService" scope="prototype">
+    <bean id="personService" class="com.healthcareApp.service.PersonService">
 <!--        <property name="personRepository" ref="personRepository"/>-->
        <constructor-arg ref="personRepository"/>
     </bean>
 
     <!-- Controller Bean -->
-    <bean id="personController" class="com.healthcareApp.controller.PersonController" scope="prototype">
-<!--        <constructor-arg ref="personService"/>-->
+    <bean id="personController" class="com.healthcareApp.controller.PersonController">
+       <constructor-arg ref="personService"/>
     </bean>
 
 
