@@ -1,3 +1,4 @@
+
 package com.healthcareApp.service;
 
 import java.sql.Connection;
@@ -8,7 +9,7 @@ public class ConnectionService {
     public Connection getConnection() {
         Connection connection = null;
         try {
-            String url = "jdbc:mysql://localhost:3306/healthcaredb";
+            String url = "jdbc:mysql://localhost:3306/healthcaredata";
             String username = "root";
             String password = "admin";
             connection = DriverManager.getConnection(url, username, password);

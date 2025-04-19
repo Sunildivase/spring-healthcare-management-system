@@ -1,3 +1,4 @@
+
 package com.healthcareApp.controller;
 
 import com.healthcareApp.model.Person;
@@ -9,17 +10,16 @@ import java.sql.SQLException;
 import java.util.Scanner;
 
 
-@NoArgsConstructor
+
 @AllArgsConstructor
-@Setter
-@Getter
+@Data
 public class PersonController {
 
     private static final Scanner scanner = new Scanner(System.in);
 
-    PersonService personService = new PersonService();
+    private PersonService personService;
 
-    Person person = new Person();
+    private Person person;
 
     public void run() throws SQLException {
 
@@ -31,6 +31,7 @@ public class PersonController {
             System.out.println("2.Retrieve Person");
             System.out.println("3.Update Person");
             System.out.println("4.Delete Person");
+            System.out.println("0.Returning to Main Menu");
 
             System.out.println("select the option below:");
             option=Integer.parseInt(scanner.nextLine());
@@ -41,8 +42,8 @@ public class PersonController {
                     break;
 
                 case 2:
-                   personService.displayPerson();
-                   break;
+                    personService.displayPerson();
+                    break;
 
                 case 3:
                     personService.updatePerson(person.getPersonId(), person.getFirstName());

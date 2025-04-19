@@ -1,3 +1,4 @@
+
 package com.healthcareApp;
 
 import com.healthcareApp.controller.PersonController;
@@ -11,7 +12,12 @@ public class App {
 
     private static final Scanner scanner = new Scanner(System.in);
 
+    private static ApplicationContext context;
+
     public static void main(String[] args) throws SQLException {
+
+        // Load Spring context
+        context = new ClassPathXmlApplicationContext("spring.xml");
 
         int option;
 
@@ -30,11 +36,12 @@ public class App {
 
             switch (option){
                 case 1:
-                    ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
-                    PersonController personController = context.getBean("personController",PersonController.class);
-//                    PersonController personController = new PersonController();
+                    // Debug print statement
+                    System.out.println("Starting Spring context...");
+
+                    // Getting the bean and calling the method
+                    PersonController personController = (PersonController)context.getBean("personController", PersonController.class);
                     personController.run();
-                    System.out.println("person successfully created");
                     break;
 
                 case 2:
@@ -72,4 +79,3 @@ public class App {
 
     }
 }
-

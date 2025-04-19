@@ -1,3 +1,4 @@
+
 package com.healthcareApp.service;
 
 import com.healthcareApp.model.Person;
@@ -11,15 +12,17 @@ import java.util.List;
 import java.util.Scanner;
 
 
-@AllArgsConstructor
 
-@Setter
-@Getter
+@Data
 public class PersonService {
 
-    private static final Scanner scanner = new Scanner(System.in);
+    private static Scanner scanner = new Scanner(System.in);
 
-    private static PersonRepository personRepository = new PersonRepository();
+    private PersonRepository personRepository;
+
+    public PersonService(PersonRepository personRepository) {
+        this.personRepository = personRepository;
+    }
 
     void printPerson(Person person){
         System.out.println(person);
@@ -55,6 +58,7 @@ public class PersonService {
         String address = scanner.nextLine();
 
         Person person = new Person();
+
         person.setPersonId(personId);
         person.setType(type);
         person.setFirstName(firstName);

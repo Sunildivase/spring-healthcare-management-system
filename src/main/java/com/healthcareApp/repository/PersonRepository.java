@@ -1,3 +1,4 @@
+
 package com.healthcareApp.repository;
 
 import com.healthcareApp.model.Person;
@@ -18,6 +19,8 @@ public class PersonRepository {
 
     private static Connection connection = null;
 
+
+
     public void initConnection() throws SQLException {
 
         if (connection == null || connection.isClosed()) {
@@ -31,7 +34,7 @@ public class PersonRepository {
 
         this.initConnection();
 
-        String query = "INSERT INTO person(personId,type,firstName,lastName,age,gender,contactNo,alternateMobile,address)";
+        String query = "INSERT INTO person(personId,type,firstName,lastName,age,gender,contactNo,alternateMobile,address) VALUES(?,?,?,?,?,?,?,?,?)";
 
         try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
             preparedStatement.setInt(1, person.getPersonId());

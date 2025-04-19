@@ -1,4 +1,4 @@
 package com.healthcareApp.model;
 
-public class Department {
+public class Presciption {
 }

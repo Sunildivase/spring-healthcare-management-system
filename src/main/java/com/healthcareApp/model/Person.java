@@ -2,12 +2,10 @@ package com.healthcareApp.model;
 
 import lombok.*;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-@Setter
-@Getter
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
 public class Person {
     private int personId;
     private String type;
