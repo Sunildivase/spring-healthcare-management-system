@@ -18,12 +18,15 @@ public class PersonService {
 
     private static Scanner scanner = new Scanner(System.in);
 
+<<<<<<< HEAD
     private PersonRepository personRepository;
 
     public PersonService(PersonRepository personRepository) {
         this.personRepository = personRepository;
     }
 
+=======
+>>>>>>> 7b4be64e654966ba0c79d8bd437d59c1d904eebb
     void printPerson(Person person){
         System.out.println(person);
     }

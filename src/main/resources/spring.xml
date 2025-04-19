@@ -5,6 +5,7 @@
            http://www.springframework.org/schema/beans
            http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+<<<<<<< HEAD
     <!--@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ person module @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
     <!-- Repository -->
     <bean id="personRepository" class="com.healthcareApp.repository.PersonRepository"/>
@@ -18,10 +19,27 @@
     <!-- Controller -->
     <bean id="personController" class="com.healthcareApp.controller.PersonController">
         <constructor-arg ref="personService"/>
+=======
+    <!-- Repository Bean -->
+    <bean id="personRepository" class="com.healthcareApp.repository.PersonRepository" />
+
+    <!-- Service Bean -->
+    <bean id="personService" class="com.healthcareApp.service.PersonService">
+<!--        <property name="personRepository" ref="personRepository"/>-->
+       <constructor-arg ref="personRepository"/>
+    </bean>
+
+    <!-- Controller Bean -->
+    <bean id="personController" class="com.healthcareApp.controller.PersonController">
+       <constructor-arg ref="personService"/>
+>>>>>>> 7b4be64e654966ba0c79d8bd437d59c1d904eebb
     </bean>
 
     <!--@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ doctor module @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 7b4be64e654966ba0c79d8bd437d59c1d904eebb
 </beans>
