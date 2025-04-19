@@ -9,7 +9,7 @@
     <!-- Service Bean -->
     <bean id="personService" class="com.healthcareApp.service.PersonService" scope="prototype">
 <!--        <property name="personRepository" ref="personRepository"/>-->
-<!--        <constructor-arg ref="personRepository"/>-->
+       <constructor-arg ref="personRepository"/>
     </bean>
 
     <!-- Controller Bean -->
