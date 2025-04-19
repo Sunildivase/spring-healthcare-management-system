@@ -19,8 +19,6 @@ public class PersonService {
 
     private static final Scanner scanner = new Scanner(System.in);
 
-    private static PersonRepository personRepository = new PersonRepository();
-
     void printPerson(Person person){
         System.out.println(person);
     }
