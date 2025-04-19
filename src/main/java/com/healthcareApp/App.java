@@ -16,6 +16,9 @@ public class App {
 
     public static void main(String[] args) throws SQLException {
 
+        // Debug print statement
+        System.out.println("Starting Spring context...");
+
         // Load Spring context
         context = new ClassPathXmlApplicationContext("spring.xml");
 
@@ -36,8 +39,6 @@ public class App {
 
             switch (option){
                 case 1:
-                    // Debug print statement
-                    System.out.println("Starting Spring context...");
 
                     // Getting the bean and calling the method
                     PersonController personController = (PersonController)context.getBean("personController", PersonController.class);
