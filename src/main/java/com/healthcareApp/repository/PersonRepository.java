@@ -19,8 +19,6 @@ public class PersonRepository {
 
     private static Connection connection = null;
 
-
-
     public void initConnection() throws SQLException {
 
         if (connection == null || connection.isClosed()) {

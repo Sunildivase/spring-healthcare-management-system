@@ -5,14 +5,12 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Builder
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Appointment {
-    private int appointmentId;
+@Builder
+public class Prescription {
+    private int prescriptionId;
+    private String prescriptionDetails;
     private int personId;
-    private int doctorId;
-    private int hospitalId;
-    private int deptId;
 }

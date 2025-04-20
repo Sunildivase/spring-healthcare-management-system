@@ -12,18 +12,13 @@ import java.util.List;
 import java.util.Scanner;
 
 
-
+@AllArgsConstructor
 @Data
 public class PersonService {
 
-    private static Scanner scanner = new Scanner(System.in);
-
+    private static final Scanner scanner = new Scanner(System.in);
 
     private PersonRepository personRepository;
-
-    public PersonService(PersonRepository personRepository) {
-        this.personRepository = personRepository;
-    }
 
 
     void printPerson(Person person){
