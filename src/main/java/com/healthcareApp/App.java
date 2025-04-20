@@ -83,6 +83,9 @@ public class App {
                     break;
 
                 case 7:
+                    // Getting the bean and calling the method
+                    BillingController billingController =  context.getBean("billingController", BillingController.class);
+                    billingController.run();
                     System.out.println("billing created successfully");
                     break;
 

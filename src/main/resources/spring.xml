@@ -99,4 +99,17 @@
 
     <!--@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ billing module @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
 
+    <bean id="billingRepository" class="com.healthcareApp.repository.BillingRepository"/>
+
+    <!-- Service -->
+    <bean id="billingService" class="com.healthcareApp.service.BillingService">
+        <!--        <property name="billingRepository" ref="billingRepository"/>-->
+        <constructor-arg ref="billingRepository"/>
+    </bean>
+
+    <!-- Controller -->
+    <bean id="billingController" class="com.healthcareApp.controller.BillingController">
+        <constructor-arg ref="billingService"/>
+    </bean>
+
 </beans>
