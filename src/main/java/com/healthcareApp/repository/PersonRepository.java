@@ -26,7 +26,7 @@ public class PersonRepository {
         }
     }
 
-    private static final List<Person> personList = new ArrayList<>();
+
 
     public boolean createPerson(Person person) throws SQLException {
 
@@ -64,6 +64,8 @@ public class PersonRepository {
     }
 
     public List<Person> displayPerson() throws SQLException {
+
+        List<Person> personList = new ArrayList<>();
 
         this.initConnection();
 

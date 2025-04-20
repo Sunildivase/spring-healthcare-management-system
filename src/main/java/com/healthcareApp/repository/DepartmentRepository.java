@@ -23,7 +23,7 @@ public class DepartmentRepository {
         }
     }
 
-    private static final List<Department> departmentList = new ArrayList<>();
+
 
     public boolean createDepartment(Department department) throws SQLException {
 
@@ -58,6 +58,8 @@ public class DepartmentRepository {
 
     public List<Department> displayDepartment() throws SQLException {
 
+        List<Department> departmentList = new ArrayList<>();
+        
         this.initConnection();
 
         String query = "SELECT * FROM department";

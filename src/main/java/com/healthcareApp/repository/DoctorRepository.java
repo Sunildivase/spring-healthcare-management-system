@@ -25,7 +25,7 @@ public class DoctorRepository {
         }
     }
 
-    private static final List<Doctor> doctorList = new ArrayList<>();
+
 
     public boolean createDoctor(Doctor doctor) throws SQLException {
 
@@ -62,6 +62,8 @@ public class DoctorRepository {
     }
 
     public List<Doctor> displayDoctor() throws SQLException {
+
+        List<Doctor> doctorList = new ArrayList<>();
 
         this.initConnection();
 
