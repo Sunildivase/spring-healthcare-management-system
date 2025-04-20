@@ -76,6 +76,9 @@ public class App {
                     break;
 
                 case 6:
+                    // Getting the bean and calling the method
+                    PrescriptionController prescriptionController =  context.getBean("prescriptionController", PrescriptionController.class);
+                    prescriptionController.run();
                     System.out.println("prescription created successfully");
                     break;
 

@@ -83,5 +83,20 @@
     </bean>
 
     <!--@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ prescription module @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+    <!-- Repository -->
+    <bean id="prescriptionRepository" class="com.healthcareApp.repository.PrescriptionRepository"/>
+
+    <!-- Service -->
+    <bean id="prescriptionService" class="com.healthcareApp.service.PrescriptionService">
+        <!--        <property name="prescriptionRepository" ref="prescriptionRepository"/>-->
+        <constructor-arg ref="prescriptionRepository"/>
+    </bean>
+
+    <!-- Controller -->
+    <bean id="prescriptionController" class="com.healthcareApp.controller.PrescriptionController">
+        <constructor-arg ref="prescriptionService"/>
+    </bean>
+
+    <!--@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ billing module @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
 
 </beans>
