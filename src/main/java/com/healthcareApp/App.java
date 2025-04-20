@@ -2,6 +2,7 @@
 package com.healthcareApp;
 
 import com.healthcareApp.controller.DoctorController;
+import com.healthcareApp.controller.HospitalController;
 import com.healthcareApp.controller.PersonController;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -56,6 +57,9 @@ public class App {
                     break;
 
                 case 3:
+                    // Getting the bean and calling the method
+                    HospitalController hospitalController = (HospitalController) context.getBean("hospitalController", HospitalController.class);
+                    hospitalController.run();
                     System.out.println("hospital created successfully");
                     break;
 

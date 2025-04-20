@@ -3,6 +3,8 @@ package com.healthcareApp.service;
 import com.healthcareApp.model.Doctor;
 import com.healthcareApp.model.Person;
 import com.healthcareApp.repository.DoctorRepository;
+import lombok.AllArgsConstructor;
+import lombok.Data;
 
 import javax.print.Doc;
 import java.sql.SQLException;
@@ -10,6 +12,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+@AllArgsConstructor
+@Data
 public class DoctorService {
 
     private static final Scanner scanner = new Scanner(System.in);
@@ -49,7 +53,7 @@ public class DoctorService {
 
         Doctor doctor = new Doctor(doctorId,firstName,lastName,age,gender,contactNo,speciality,experience);
 
-        System.out.println("person created successfully!!!");
+        System.out.println("Doctor created successfully!!!");
         return doctorRepository.createDoctor(doctor);
     }
 
@@ -59,17 +63,17 @@ public class DoctorService {
 
         List<Doctor> doctorList = new ArrayList<>();
 
-        System.out.println("person list: "+doctorRepository.displayDoctor());
+        System.out.println("Doctor list: "+doctorRepository.displayDoctor());
 
         return doctorList;
     }
 
     public boolean updateDoctor(int doctorId,String firstName) throws SQLException {
 
-        if (doctorRepository.updatePerson(doctorId, firstName)) {
-            System.out.println("person updated successfully ");
+        if (doctorRepository.updateDoctor(doctorId, firstName)) {
+            System.out.println("Doctor updated successfully ");
         } else {
-            System.out.println("Failed to update person");
+            System.out.println("Failed to update Doctor");
         }
         return false;
     }
@@ -77,6 +81,6 @@ public class DoctorService {
     public void deleteDoctor(int doctorId) throws SQLException {
 
         boolean deletedDoctor = doctorRepository.deleteDoctor(doctorId);
-        System.out.println("deleted person: "+deletedDoctor);
+        System.out.println("deleted Doctor: "+deletedDoctor);
     }
 }

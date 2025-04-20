@@ -1,8 +1,9 @@
 package com.healthcareApp.repository;
 
 import com.healthcareApp.model.Doctor;
-import com.healthcareApp.model.Person;
+;
 import com.healthcareApp.service.ConnectionService;
+import lombok.AllArgsConstructor;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -10,6 +11,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+
+@AllArgsConstructor
 
 public class DoctorRepository {
 
@@ -117,7 +120,7 @@ public class DoctorRepository {
 
     }
 
-    public boolean DeleteDoctor(int doctorId) throws SQLException {
+    public boolean deleteDoctor(int doctorId) throws SQLException {
 
         this.initConnection();
 
@@ -127,9 +130,9 @@ public class DoctorRepository {
 
             preparedStatement.setInt(1, doctorId);
 
-            int rowdeleted = preparedStatement.executeUpdate();
+            int rowDeleted = preparedStatement.executeUpdate();
 
-            return rowdeleted > 0;
+            return rowDeleted > 0;
 
         } catch (SQLException e) {
             throw new RuntimeException(e);

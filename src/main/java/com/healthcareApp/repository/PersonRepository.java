@@ -133,9 +133,9 @@ public class PersonRepository {
 
             preparedStatement.setInt(1, personId);
 
-            int rowdeleted = preparedStatement.executeUpdate();
+            int rowDeleted = preparedStatement.executeUpdate();
 
-            return rowdeleted > 0;
+            return rowDeleted > 0;
 
         } catch (SQLException e) {
             throw new RuntimeException(e);

@@ -24,4 +24,35 @@
 
         <!--@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ doctor module @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
 
+    <!-- Repository -->
+    <bean id="doctorRepository" class="com.healthcareApp.repository.DoctorRepository"/>
+
+    <!-- Service -->
+    <bean id="doctorService" class="com.healthcareApp.service.DoctorService">
+        <!--        <property name="personRepository" ref="personRepository"/>-->
+        <constructor-arg ref="doctorRepository"/>
+    </bean>
+
+    <!-- Controller -->
+    <bean id="doctorController" class="com.healthcareApp.controller.DoctorController">
+        <constructor-arg ref="doctorService"/>
+    </bean>
+
+    <!--@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ hospital module @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+    <!-- Repository -->
+    <bean id="hospitalRepository" class="com.healthcareApp.repository.HospitalRepository"/>
+
+    <!-- Service -->
+    <bean id="hospitalService" class="com.healthcareApp.service.HospitalService">
+        <!--        <property name="personRepository" ref="personRepository"/>-->
+        <constructor-arg ref="hospitalRepository"/>
+    </bean>
+
+    <!-- Controller -->
+    <bean id="hospitalController" class="com.healthcareApp.controller.HospitalController">
+        <constructor-arg ref="hospitalService"/>
+    </bean>
+
+    <!--@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ department module @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+
 </beans>
