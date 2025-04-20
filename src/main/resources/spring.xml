@@ -29,7 +29,7 @@
 
     <!-- Service -->
     <bean id="doctorService" class="com.healthcareApp.service.DoctorService">
-        <!--        <property name="personRepository" ref="personRepository"/>-->
+        <!--        <property name="doctorRepository" ref="doctorRepository"/>-->
         <constructor-arg ref="doctorRepository"/>
     </bean>
 
@@ -44,7 +44,7 @@
 
     <!-- Service -->
     <bean id="hospitalService" class="com.healthcareApp.service.HospitalService">
-        <!--        <property name="personRepository" ref="personRepository"/>-->
+        <!--        <property name="hospitalRepository" ref="hospitalRepository"/>-->
         <constructor-arg ref="hospitalRepository"/>
     </bean>
 
@@ -54,5 +54,19 @@
     </bean>
 
     <!--@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ department module @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+    <!-- Repository -->
+    <bean id="departmentRepository" class="com.healthcareApp.repository.DepartmentRepository"/>
+
+    <!-- Service -->
+    <bean id="departmentService" class="com.healthcareApp.service.DepartmentService">
+        <!--        <property name="departmentRepository" ref="departmentRepository"/>-->
+        <constructor-arg ref="departmentRepository"/>
+    </bean>
+
+    <!-- Controller -->
+    <bean id="departmentController" class="com.healthcareApp.controller.DepartmentController">
+        <constructor-arg ref="departmentService"/>
+    </bean>
+    <!--@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ Appointment module @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
 
 </beans>

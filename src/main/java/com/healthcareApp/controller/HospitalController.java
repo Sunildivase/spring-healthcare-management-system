@@ -4,10 +4,12 @@ import com.healthcareApp.model.Doctor;
 import com.healthcareApp.model.Hospital;
 import com.healthcareApp.service.DoctorService;
 import com.healthcareApp.service.HospitalService;
+import lombok.AllArgsConstructor;
 
 import java.sql.SQLException;
 import java.util.Scanner;
 
+@AllArgsConstructor
 public class HospitalController {
     private static final Scanner scanner = new Scanner(System.in);
 
