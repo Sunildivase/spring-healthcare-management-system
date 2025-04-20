@@ -1,9 +1,7 @@
 package com.healthcareApp.controller;
 
 import com.healthcareApp.model.Department;
-import com.healthcareApp.model.Doctor;
 import com.healthcareApp.service.DepartmentService;
-import com.healthcareApp.service.DoctorService;
 import lombok.AllArgsConstructor;
 
 import java.sql.SQLException;
@@ -15,9 +13,9 @@ public class DepartmentController {
 
     private DepartmentService departmentService;
 
-    private Department department;
-
     public void run() throws SQLException {
+
+        Department department=new Department();
 
         int option;
 

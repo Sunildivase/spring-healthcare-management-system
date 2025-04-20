@@ -19,9 +19,9 @@ public class PersonController {
 
     private PersonService personService;
 
-    private Person person;
-
     public void run() throws SQLException {
+
+        Person person = new Person();
 
         int option;
 

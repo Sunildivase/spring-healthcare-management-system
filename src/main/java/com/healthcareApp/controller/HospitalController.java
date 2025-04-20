@@ -15,9 +15,9 @@ public class HospitalController {
 
     private HospitalService hospitalService;
 
-    private Hospital hospital;
-
     public void run() throws SQLException {
+
+       Hospital hospital = new Hospital();
 
         int option;
 

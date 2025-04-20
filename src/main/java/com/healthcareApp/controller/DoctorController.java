@@ -16,9 +16,9 @@ public class DoctorController {
 
     private DoctorService doctorService;
 
-    private Doctor doctor;
-
     public void run() throws SQLException {
+
+        Doctor doctor = new Doctor();
 
         int option;
 
