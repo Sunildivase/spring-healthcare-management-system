@@ -1,10 +1,7 @@
 
 package com.healthcareApp;
 
-import com.healthcareApp.controller.DepartmentController;
-import com.healthcareApp.controller.DoctorController;
-import com.healthcareApp.controller.HospitalController;
-import com.healthcareApp.controller.PersonController;
+import com.healthcareApp.controller.*;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -44,14 +41,14 @@ public class App {
                 case 1:
 
                     // Getting the bean and calling the method
-                    PersonController personController = (PersonController)context.getBean("personController", PersonController.class);
+                    PersonController personController = context.getBean("personController", PersonController.class);
                     personController.run();
                     System.out.println("person successfully created");
                     break;
 
                 case 2:
                     // Getting the bean and calling the method
-                    DoctorController doctorController = (DoctorController) context.getBean("doctorController", DoctorController.class);
+                    DoctorController doctorController =  context.getBean("doctorController", DoctorController.class);
                     doctorController.run();
 
                     System.out.println("doctor successfully created");
@@ -59,19 +56,22 @@ public class App {
 
                 case 3:
                     // Getting the bean and calling the method
-                    HospitalController hospitalController = (HospitalController) context.getBean("hospitalController", HospitalController.class);
+                    HospitalController hospitalController = context.getBean("hospitalController", HospitalController.class);
                     hospitalController.run();
                     System.out.println("hospital created successfully");
                     break;
 
                 case 4:
                     // Getting the bean and calling the method
-                    DepartmentController departmentController = (DepartmentController) context.getBean("departmentController", DepartmentController.class);
+                    DepartmentController departmentController =  context.getBean("departmentController", DepartmentController.class);
                     departmentController.run();
                     System.out.println("department created successfully");
                     break;
 
                 case 5:
+                    // Getting the bean and calling the method
+                    AppointmentController appointmentController =  context.getBean("appointmentController", AppointmentController.class);
+                    appointmentController.run();
                     System.out.println("appointment created successfully");
                     break;
 

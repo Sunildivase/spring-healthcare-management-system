@@ -59,7 +59,7 @@ public class DepartmentRepository {
     public List<Department> displayDepartment() throws SQLException {
 
         List<Department> departmentList = new ArrayList<>();
-        
+
         this.initConnection();
 
         String query = "SELECT * FROM department";

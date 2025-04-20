@@ -68,5 +68,20 @@
         <constructor-arg ref="departmentService"/>
     </bean>
     <!--@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ Appointment module @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+    <!-- Repository -->
+    <bean id="appointmentRepository" class="com.healthcareApp.repository.AppointmentRepository"/>
+
+    <!-- Service -->
+    <bean id="appointmentService" class="com.healthcareApp.service.AppointmentService">
+        <!--        <property name="departmentRepository" ref="departmentRepository"/>-->
+        <constructor-arg ref="appointmentRepository"/>
+    </bean>
+
+    <!-- Controller -->
+    <bean id="appointmentController" class="com.healthcareApp.controller.AppointmentController">
+        <constructor-arg ref="appointmentService"/>
+    </bean>
+
+    <!--@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ prescription module @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
 
 </beans>
