@@ -37,7 +37,7 @@ spring-healthcare-management-system project is a basic Java application that dem
   * AppointmentController.java
   * PrescriptionController.java
   * BillingController.java
-* com.helathcareAppmodel: includes all the model classes:
+* com.helathcareApp.model: includes all the model classes:
   * Person.java
   * Doctor.java
   * Hospital.java
