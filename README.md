@@ -56,5 +56,111 @@ spring-healthcare-management-system project is a basic Java application that dem
    * ConnectionService.java
      
  # Class Diagram
+```mermaid
+---
+title: healthcare management system
+---
+classDiagram
+
+ note " This is generally appointment booking for health services"
+
+ class Person
+ Person : +int personId
+ Person : +String firstname
+ Person : +String lastName
+ Person : +int age
+ Person : +String gender
+ Person : +Long contactNo
+ Person : +Long alternateMobile
+ Person : +String address
+
+class Person{
+ +createPerson()
+ +displayPerson()
+}
+
+ 
+
+Doctor: +int doctorId
+Doctor: +String firstName
+Doctor: +String lastName
+Doctor: +int age
+Doctor: +String gender
+Doctor: +String contactNo
+Doctor: +String speciality
+Doctor: +int experience
+
+class Doctor{
+ +createDoctor()
+ +displayDoctor()
+}
+
+
+Hospital: +int hospitalId
+Hospital: +String hospitalName
+Hospital: +String address
+Hospital: +Long contactNo
+Hospital: +String emailId
+
+class Hospital{
++createHospital()
++displayHospital()
+}
+
+Department: +int deptId
+Department: +String deptName
+Department: +doctorId
+Department: +hosptitalId
+
+class Department{
++createDepartment()
++displayDepartment()
+}
+
+Hospital <-- Department : Association
+Doctor  <-- Department  : Assocciation
+
+Appointment: +int appointmentId
+Appointment: +int personId
+Appointment: +int doctorId
+Appointment: +int hospitalId
+Appointment: +int deptId
+
+class Appointment{
++createAppointment()
++displayAppointment()
+
+}
+
+
+Appointment --> Person : Association
+Appointment --> Doctor : Association
+Appointment --> Hospital : Association
+Appointment --> Department : Association
+
+Prescription : +int prescriptionId
+Prescription : +String prescriptionDetails
+Prescription : +int personId
+
+class Prescription{
++createPrescription()
++displayPrescription()
+}
+
+Prescription --> Person : Association
+
+Billing : +int billId
+Billing : +int bill
+Billing : +int totalBill
+Billing : +int personId
+
+class Billing{
++createBilling()
++displayBilling()
+}
+
+Billing --> Person : Association
+
+```
 
 
