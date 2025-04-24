@@ -4,7 +4,6 @@ package com.healthcareApp.controller;
 import com.healthcareApp.model.Person;
 import com.healthcareApp.service.PersonService;
 import lombok.*;
-import org.springframework.context.ApplicationContext;
 
 import java.sql.SQLException;
 import java.util.Scanner;

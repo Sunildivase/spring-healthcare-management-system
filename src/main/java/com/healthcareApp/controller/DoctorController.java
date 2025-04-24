@@ -1,9 +1,9 @@
 package com.healthcareApp.controller;
 
 import com.healthcareApp.model.Doctor;
-import com.healthcareApp.model.Person;
+
 import com.healthcareApp.service.DoctorService;
-import com.healthcareApp.service.PersonService;
+
 import lombok.AllArgsConstructor;
 
 import java.sql.SQLException;
